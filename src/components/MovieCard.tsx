@@ -1,17 +1,21 @@
+import type { Movie } from "../types/movie";
 
+type Props = {
+  movie: Movie;
+};
 
-function MovieCard() {
+function MovieCard({movie}:Props) {
   return (
- <div className="w-64 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+ <div className="w-64  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
   <img
-    src=""
+    src={movie.image}
     alt="انتقام جویان"
-    className="w-full h-80 object-cover bg-gray-200"
+    className="w-full h-50 object-cover bg-gray-200"
   />
 
   <div className="p-4 text-right">
     <h3 className="text-lg font-bold text-gray-800 mb-2">
-      انتقام جویان
+   {movie.title}
     </h3>
 
     <p className="text-sm text-gray-500 mb-1">

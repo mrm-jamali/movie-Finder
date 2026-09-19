@@ -1,13 +1,5 @@
 
-export type Movie = {
-  id: number;
-  title: string;
-  genre: string;
-  year: number;
-  rating: number;
-  description: string;
-  image: string;
-};
+import type { Movie } from "../types/movie";
 
 export const movies: Movie[] = [
   {
@@ -275,4 +267,3 @@ export const movies: Movie[] = [
       "https://image.tmdb.org/t/p/w500/7BsvSuDQuoqhWmU2fL3aYjQ7.jpg",
   },
 ];
-```
