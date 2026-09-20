@@ -17,17 +17,19 @@ function MovieCard({movie}:Props) {
     <h3 className="text-lg font-bold text-gray-800 mb-2">
    {movie.title}
     </h3>
-
+  <span className="bg-blue-100 mb-3 text-blue-600 text-xs px-3 py-1 rounded-full inline-flex items-center gap-1">
+     {movie.genre}
+    </span>
     <p className="text-sm text-gray-500 mb-1">
-      سال انتشار: 2012
+    {movie.year}
     </p>
 
     <p className="text-sm text-yellow-600 font-semibold mb-2">
-      امتیاز: 8.0
+    {movie.rating}
     </p>
 
     <p className="text-sm text-gray-600 line-clamp-2 mb-4">
-      توضیحات فیلم در این قسمت قرار می‌گیرد و خلاصه‌ای از داستان فیلم نمایش داده می‌شود.
+     {movie.description}
     </p>
 
     <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors">

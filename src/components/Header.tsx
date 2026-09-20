@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-import SearchBar from './SearchBar'
+
 
 function Header() {
   return (
@@ -11,7 +11,7 @@ function Header() {
     </h1>
   </div>
 
-  <SearchBar />
+ 
 </div>
   )
 }
