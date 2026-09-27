@@ -2,16 +2,17 @@
 
 
 type Props = {
-   movies:MovieType[],
-    search:string,
-    genre:string,
   
-displyResult:(search:string,genre:string)=>void
+    search:string,
+    setSearch: React.Dispatch<React.SetStateAction<string>>
+    genre:string,
+  setGenre: React.Dispatch<React.SetStateAction<string>>
+
    
 
 }
 const movieGenres = ["همه ژانرها", "اکشن", "درام", "علمی تخیلی", "کمدی", "ترسناک", "عاشقانه","معمایی","جنگی"];
-function SearchBar({ movies,search, genre, displyResult}:Props) {
+function SearchBar({search,setSearch,setGenre, genre}:Props) {
  
 
   
@@ -20,10 +21,10 @@ function SearchBar({ movies,search, genre, displyResult}:Props) {
   <input
     type="text"
     placeholder="جستجوی فیلم..."          value={search}
-    onChange={(e)=>{displyResult(e.target.value,genre)}}  className="w-1/4 mx-2 bg-white text-gray-700 placeholder:text-gray-400 border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    onChange={(e)=>{setSearch(e.target.value)}}  className="w-1/4 mx-2 bg-white text-gray-700 placeholder:text-gray-400 border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
   />
 
-  <select value={genre} onChange={(e)=>{displyResult(search,e.target.value)}}
+  <select value={genre} onChange={(e)=>{setGenre(e.target.value)}}
     className="w-1/4 mx-2 bg-white text-gray-700 border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
   >
     {movieGenres.map((genre)=><option key={genre} value={genre}>{genre}</option>)}
