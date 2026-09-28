@@ -1,8 +1,20 @@
-import React from 'react'
+
+
 
 function Favorites() {
+
+  const listFavarite=()=>{
+    
+    let favariteMovie=localStorage.getItem("favarite");
+  console.log("favariteMovie",favariteMovie)
+  console.log("hello")
+  }
   return (
-    <div>Favorites</div>
+    <div>
+<button onClick={listFavarite}>
+  تست Favorite
+</button>
+    </div>
   )
 }
 

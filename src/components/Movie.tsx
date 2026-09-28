@@ -4,13 +4,14 @@ import MovieCard from './MovieCard'
 import type { Movie as MovieType } from "../types/movie";
 type Props={
   
-   searchResult:MovieType[]
+   searchResult:MovieType[];
+    favariteMovie:(id: number)=>void;
 }
 
-function Movie({searchResult}:Props) {
+function Movie({searchResult, favariteMovie}:Props) {
   return (
     <div className="mx-[50px] mt-12 flex flex-wrap gap-8">
-      {searchResult.map(movie=><MovieCard movie={movie} />)}
+      {searchResult.map(movie=><MovieCard movie={movie}  favariteMovie={favariteMovie} />)}
         
     </div>
   )

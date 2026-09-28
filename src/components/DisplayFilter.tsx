@@ -3,9 +3,10 @@ import { Clapperboard } from "lucide-react";
 type Props={
   genre:string;
    clearCategory:()=>void;
+   numbersMovies:number;
 
 }
-function DisplayFilter({genre,clearCategory}:Props) {
+function DisplayFilter({genre,clearCategory,numbersMovies}:Props) {
   return (
     <div className="w-[calc(100%-100px)] mx-[50px] mt-20 flex justify-between items-center bg-blue-200 py-4 px-8 rounded-xl shadow-md">
       <div>
@@ -26,7 +27,7 @@ function DisplayFilter({genre,clearCategory}:Props) {
 
   <div>
     <p className="text-left text-blue-700">تعداد فیلم های پیدا شده:</p>
-    <p className="text-left text-blue-700">21</p>
+    <p className="text-left text-blue-700">{numbersMovies}</p>
   </div>
    <span>
     <Clapperboard size={50}  className="text-blue-700"  />
