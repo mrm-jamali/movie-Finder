@@ -9,6 +9,7 @@ function Home() {
   const [search, setSearch] = useState("");
 
   const [genre, setGenre] = useState("");
+  const [close,setClose]=useState(false)
 
   const searchResult = useMemo(() => {
     if (search || genre) {
@@ -28,6 +29,15 @@ function Home() {
     }
       return movies;
   }, [search, genre]);
+  const deleteFilter = () => {
+    setSearch("");
+    setGenre("");
+  }
+  const clearCategory=()=>{
+    setGenre("");
+    setClose(close=>!close)
+
+  }
 
   return (
     <div className="relative min-h-screen bg-blue-50 pt-6">
@@ -36,9 +46,9 @@ function Home() {
         search={search}
         setSearch={setSearch}
         genre={genre}
-        setGenre={setGenre}
+        setGenre={setGenre} deleteFilter={deleteFilter}
       />
-      <DisplayFilter />
+      <DisplayFilter  genre={genre}  clearCategory={clearCategory}  />
       <Movie searchResult={searchResult} />
     </div>
   );

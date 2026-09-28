@@ -1,6 +1,7 @@
 import { Search } from "lucide-react";
 
 
+
 function Header() {
   return (
   <div className="relative bg-blue-800 py-10">

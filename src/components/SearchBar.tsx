@@ -7,12 +7,13 @@ type Props = {
     setSearch: React.Dispatch<React.SetStateAction<string>>
     genre:string,
   setGenre: React.Dispatch<React.SetStateAction<string>>
+  deleteFilter: () => void
 
    
 
 }
 const movieGenres = ["همه ژانرها", "اکشن", "درام", "علمی تخیلی", "کمدی", "ترسناک", "عاشقانه","معمایی","جنگی"];
-function SearchBar({search,setSearch,setGenre, genre}:Props) {
+function SearchBar({search,setSearch,setGenre, genre,deleteFilter}:Props) {
  
 
   
@@ -33,7 +34,7 @@ function SearchBar({search,setSearch,setGenre, genre}:Props) {
 
   <button
     className="w-1/4 mx-2 bg-blue-500 text-white py-3 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-  >
+  onClick={deleteFilter}>
     پاک کردن فیلتر
   </button>
 </div>

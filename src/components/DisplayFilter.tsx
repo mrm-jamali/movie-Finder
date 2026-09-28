@@ -1,25 +1,24 @@
 import { X } from "lucide-react";
 import { Clapperboard } from "lucide-react";
+type Props={
+  genre:string;
+   clearCategory:()=>void;
 
-function DisplayFilter() {
+}
+function DisplayFilter({genre,clearCategory}:Props) {
   return (
     <div className="w-[calc(100%-100px)] mx-[50px] mt-20 flex justify-between items-center bg-blue-200 py-4 px-8 rounded-xl shadow-md">
       <div>
         <p className=" text-blue-700">دسته بندی های انتخاب شده</p>
+       
         <div className="flex gap-2 mt-5">
-          <span className="bg-blue-100 text-blue-600 text-xs px-3 py-1 rounded-full inline-flex items-center gap-1">
-            اکشن
-            <X size={12} />
-          </span>
+        {genre && (   <span className="bg-blue-100 text-blue-600 text-xs px-3 py-1 rounded-full inline-flex items-center gap-1">
+          {genre}
 
-          <span className="bg-blue-100 text-blue-600 text-xs px-3 py-1 rounded-full inline-flex items-center gap-1">
-            درام
-            <X size={12} />
+            <X size={12} onClick={clearCategory}  />
           </span>
-
-          <span className="bg-blue-100 text-blue-600 text-xs px-3 py-1 rounded-full inline-flex items-center gap-1">
-            <X size={12} /> کمدی
-          </span>
+) }
+         
         </div>
       </div>
      <div className="flex items-center gap-3">
