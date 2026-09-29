@@ -4,9 +4,10 @@ import { Heart } from "lucide-react";
 type Props = {
   movie: Movie;
     favariteMovie:(id:number)=>void;
+    isFavarite:boolean;
 };
 
-function MovieCard({ movie, favariteMovie }: Props) {
+function MovieCard({ movie, favariteMovie, isFavarite }: Props) {
   return (
     <div className="w-64  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
       <img
@@ -19,7 +20,7 @@ function MovieCard({ movie, favariteMovie }: Props) {
         <div className="flex justify-between cursor-pointer  items-center" >
   <h3 className="text-lg font-bold text-gray-800 mb-2">{movie.title}</h3>
   <span>
-<Heart size={20} onClick={()=>{favariteMovie(movie.id)}} />
+<Heart size={20} onClick={()=>{favariteMovie(movie.id)}}  color={isFavarite ? "black" : "gray"} fill={isFavarite ? "red" : "white"} />
   </span>
 
         </div>
